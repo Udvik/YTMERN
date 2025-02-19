@@ -1,8 +1,11 @@
 from pymongo import MongoClient
 import bcrypt
+from dotenv import load_dotenv
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 
 # Connect to MongoDB Atlas
-client = MongoClient("mongodb+srv://udvik4321:Udvik@udvik.jmwjtim.mongodb.net/")
+client = MongoClient(MONGO_URI)
 
 # Select database & collection
 db = client["entertainment_recommendation"]
